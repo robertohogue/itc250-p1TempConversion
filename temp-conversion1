@@ -1,0 +1,69 @@
+<?php
+//postback1.php
+
+//Fahrenheit to Celsius ° C = 5/9 (° F - 32)
+if(isset($_POST['celsius'])){//show data
+    
+    $fahr = (float)$_POST['fahr'];
+    $total1 = ($cel * 9/5) + 32;
+    echo "If the temp is $fahr degrees Fahrenheit, It is $total1 degrees Celsius";
+}else{//show form
+    echo '
+    <form action="" method="post">
+    <p> <label>
+        <h2>Convert Celsius to Fahrenheit:</h2><br /><br />
+        <input type="text" name="cel" />
+        </label>
+    </p>
+    <p>
+        <input type="submit" name="celsius" />
+    </p>
+    
+    </form>
+    ';
+}
+
+//Celsius to Fahrenheit ° F = 9/5 ( ° C) + 32
+if(isset($_POST['fahrenheit'])){//show data
+    
+    $cel = (float)$_POST['cel'];
+    $total2 = ($fahr - 32) / 1.8;
+    
+    echo "If the temp is $cel degrees Celsius, It is $total2 degrees Fahrenheit";
+
+}else{//show form
+    echo '
+    <form action="" method="post">
+    <p> <label>
+        <h2>Convert Fahrenheit to Celsius:</h2><br />
+        <input type="text" name="fahr" />
+        </label>
+    </p> 
+    <p>
+        <input type="submit" name="fahrenheit" />
+    </p>
+    </form>
+    ';
+}
+//Fahrenheit to Kelvin K = 5/9 (° F - 32) + 273.15
+if(isset($_POST['kelvin'])){//show data
+    
+    $fahr = (float)$_POST['fahr'];
+    $total3 = 5/9 * ($fahr - 32) + 237.15;
+    
+    echo "If the temp is $fahr degrees Farenheit, It is $total3 degrees Kelvin";
+
+}else{//show form
+    echo '
+    <form action="" method="post">
+    <p> <label>
+        <h2>Convert Fahrenheit to Kelvin:</h2><br />
+        <input type="text" name="fahr" />
+        </label>
+    </p> 
+    <p>
+        <input type="submit" name="kelvin" />
+    </p>
+    </form>
+    ';
+}
